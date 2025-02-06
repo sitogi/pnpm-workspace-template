@@ -1,0 +1,11 @@
+{
+  "name": "y",
+  "version": "1.0.0",
+  "scripts": {
+    "shared": "pnpm -F \"shared\"",
+    "frontend": "pnpm -F \"frontend\""
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
