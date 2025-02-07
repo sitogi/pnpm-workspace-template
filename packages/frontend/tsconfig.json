@@ -14,5 +14,8 @@
       "@shared/*": ["../shared/src/*"],
     },
     "types": ["vitest/globals"],
+    "references": [
+      { "path": "../backend" }
+    ]
   },
 }
