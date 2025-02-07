@@ -4,9 +4,17 @@
   "scripts": {
     "shared": "pnpm -F \"shared\"",
     "frontend": "pnpm -F \"frontend\"",
-    "backend": "pnpm -F \"backend\""
+    "backend": "pnpm -F \"backend\"",
+    "start": "pm2 start pm2.config.js",
+    "stop": "pm2 delete pm2.config.js",
+    "log": "pm2 logs",
+    "log:backend": "pm2 logs backend",
+    "log:frontend": "pm2 logs frontend"
   },
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "pm2": "^5.4.3"
+  }
 }
