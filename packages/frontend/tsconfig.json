@@ -7,15 +7,16 @@
     "strict": true,
     "moduleResolution": "Node",
     "noEmit": true,
+    "allowSyntheticDefaultImports": true,
     "jsx": "react-jsx",
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],
-      "@shared/*": ["../shared/src/*"],
+      "@shared/*": ["../shared/src/*"]
     },
     "types": ["vitest/globals"],
-    "references": [
-      { "path": "../backend" }
-    ]
   },
+  "references": [
+    { "path": "../shared" }
+  ]
 }

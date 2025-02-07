@@ -4,9 +4,7 @@
   "type": "module",
   "scripts": {
     "start": "sls offline start --reloadHandler",
-    "dev": "sls dev",
-    "deploy": "sls deploy",
-    "remove": "sls remove",
+    "deploy-prod": "sls deploy",
     "test": "vitest --run"
   },
   "author": "",

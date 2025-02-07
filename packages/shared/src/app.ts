@@ -5,5 +5,5 @@ export type Person = {
 
 export const sharedPerson: Person = {
   name: 'takano',
-  age: 346,
+  age: 223,
 };
