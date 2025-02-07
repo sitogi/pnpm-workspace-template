@@ -1,0 +1,20 @@
+org: takanomotors
+app: serverless-lambda-sandbox
+service: serverless-lambda-sandbox
+
+plugins:
+  - serverless-offline
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  region: ap-northeast-1
+
+functions:
+  app:
+    handler: src/app-handler.handler
+    memorySize: 128
+    events:
+      - httpApi:
+          path: /app
+          method: any

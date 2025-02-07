@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "scripts": {
     "shared": "pnpm -F \"shared\"",
-    "frontend": "pnpm -F \"frontend\""
+    "frontend": "pnpm -F \"frontend\"",
+    "backend": "pnpm -F \"backend\""
   },
   "author": "",
   "license": "ISC",

@@ -1,0 +1,26 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "sls offline start --reloadHandler",
+    "dev": "sls dev",
+    "deploy": "sls deploy",
+    "remove": "sls remove",
+    "test": "vitest --run"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@types/node": "^20.17.7",
+    "serverless": "^4.6.2",
+    "serverless-offline": "^14.4.0",
+    "vite-tsconfig-paths": "^5.1.4",
+    "vitest": "^3.0.5"
+  },
+  "dependencies": {
+    "hono": "^4.6.20"
+  }
+}
