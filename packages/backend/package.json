@@ -4,6 +4,7 @@
   "type": "module",
   "scripts": {
     "start": "sls offline start --reloadHandler",
+    "build": "sls package",
     "deploy-prod": "sls deploy",
     "test": "vitest --run",
     "lint": "biome lint ./src"
