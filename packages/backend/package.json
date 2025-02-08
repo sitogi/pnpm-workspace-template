@@ -11,12 +11,12 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "@biomejs/biome": "^1.9.4",
-    "@types/node": "^20.17.7",
+    "@biomejs/biome": "catalog:",
+    "@types/node": "catalog:",
     "serverless": "^4.6.2",
     "serverless-offline": "^14.4.0",
-    "vite-tsconfig-paths": "^5.1.4",
-    "vitest": "^3.0.5"
+    "vite-tsconfig-paths": "catalog:",
+    "vitest": "catalog:"
   },
   "dependencies": {
     "hono": "^4.6.20"
