@@ -1,5 +1,5 @@
 {
-  "name": "y",
+  "name": "pnpm-workspace-template",
   "version": "1.0.0",
   "scripts": {
     "shared": "pnpm -F \"shared\"",
@@ -16,6 +16,7 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "@biomejs/biome": "catalog:",
     "pm2": "^5.4.3"
   }
 }

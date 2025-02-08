@@ -29,6 +29,9 @@ importers:
 
   .:
     devDependencies:
+      '@biomejs/biome':
+        specifier: 'catalog:'
+        version: 1.9.4
       pm2:
         specifier: ^5.4.3
         version: 5.4.3
