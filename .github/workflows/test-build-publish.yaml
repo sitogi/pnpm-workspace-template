@@ -14,9 +14,9 @@ jobs:
       - uses: actions/cache@v4
         with:
           path: ~/.pnpm-store
-          key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+          key: ${{ hashFiles('pnpm-lock.yaml') }}
           restore-keys: |
-            ${{ runner.os }}-
+            ${{ hashFiles('pnpm-lock.yaml') }}
       - uses: pnpm/action-setup@v4
         with:
           version: 10
@@ -35,9 +35,9 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ~/.pnpm-store
-          key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+          key: ${{ hashFiles('pnpm-lock.yaml') }}
           restore-keys: |
-            ${{ runner.os }}-
+            ${{ hashFiles('pnpm-lock.yaml') }}
       - uses: pnpm/action-setup@v4
         with:
           version: 10
