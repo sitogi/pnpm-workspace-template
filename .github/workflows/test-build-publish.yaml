@@ -1,0 +1,51 @@
+name: Test and Build
+
+on:
+  push:
+    branches:
+      - '**'
+
+jobs:
+  cache-pnpm:
+    name: Cache Pnpm
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/cache@v4
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+          run_install: |
+              args: [--frozen-lockfile]
+  test-build:
+    name: Test Build and Publish
+    needs: cache-pnpm
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Cache pnpm modules
+        uses: actions/cache@v4
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+          run_install: |
+              args: [--frozen-lockfile]
+#      - name: Lint
+#        run: pnpm lint
+      - name: Test
+        run: pnpm test
+#      - name: Build
+#        run: pnpm build
