@@ -7,10 +7,10 @@
     "backend": "pnpm -F \"backend\"",
     "start": "pm2 start pm2.config.js",
     "stop": "pm2 delete pm2.config.js",
-    "log": "pm2 logs",
     "log:backend": "pm2 logs backend",
     "log:frontend": "pm2 logs frontend",
-    "test": "pnpm -r --parallel test"
+    "test": "pnpm -r --parallel test",
+    "lint": "pnpm -r --parallel lint"
   },
   "author": "",
   "license": "ISC",

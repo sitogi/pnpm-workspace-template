@@ -1,5 +1,5 @@
 import styles from '@/App.module.css';
-import { type Person, sharedPerson } from '@shared/app';
+import { type Person, sharedPerson } from '@shared/types';
 import type { JSX } from 'react';
 
 export const App = (): JSX.Element => {

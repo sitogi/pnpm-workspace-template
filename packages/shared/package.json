@@ -2,9 +2,8 @@
   "name": "shared",
   "version": "1.0.0",
   "description": "",
-  "main": "src/app.ts",
   "scripts": {
-    "dev": "ts-node src/index.ts"
+    "lint": "biome lint ./src"
   },
   "author": "",
   "license": "ISC",

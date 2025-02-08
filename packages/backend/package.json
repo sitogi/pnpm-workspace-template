@@ -5,7 +5,8 @@
   "scripts": {
     "start": "sls offline start --reloadHandler",
     "deploy-prod": "sls deploy",
-    "test": "vitest --run"
+    "test": "vitest --run",
+    "lint": "biome lint ./src"
   },
   "author": "",
   "license": "ISC",

@@ -1,5 +1,5 @@
 import { printHello } from '@/printHello';
-import { type Person, sharedPerson } from '@shared/app';
+import { type Person, sharedPerson } from '@shared/types';
 import { Hono } from 'hono';
 import { type LambdaContext, type LambdaEvent, handle } from 'hono/aws-lambda';
 
