@@ -2,13 +2,17 @@ module.exports = {
   apps: [
     {
       name: 'pnpm-ws-template-backend',
+      cwd: './packages/backend',
       script: 'pnpm',
-      args: 'backend start',
+      args: 'start',
+      interpreter: '/bin/bash',
     },
     {
       name: 'pnpm-ws-template-frontend',
+      cwd: './packages/frontend',
       script: 'pnpm',
-      args: 'frontend start',
-    },
+      args: 'start',
+      interpreter: '/bin/bash',
+    }
   ],
 };
