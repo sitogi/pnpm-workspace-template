@@ -9,11 +9,9 @@
     "skipLibCheck": true,
     "paths": {
       "@/*": ["./src/*"],
-      "@shared/*": ["../shared/src/*"],
+      "@shared/*": ["../shared/src/*"]
     },
-    "types": ["vitest/globals"],
+    "types": ["vitest/globals"]
   },
-  "references": [
-    { "path": "../backend" }
-  ]
+  "references": [{ "path": "../shared" }]
 }
