@@ -35,6 +35,17 @@ output "ssh_connection_command" {
   value       = "ssh -i ${local_file.bastion_private_key.filename} ec2-user@${aws_instance.bastion.id} -o ProxyCommand='aws ssm start-session --target %h --document-name AWS-StartSSHSession --parameters portNumber=%p'"
 }
 
+output "ssh_config_entry" {
+  description = "SSH config entry to add to ~/.ssh/config for easy connection to the bastion host"
+  value       = <<-EOT
+Host bastion
+  HostName ${aws_instance.bastion.id}
+  User ec2-user
+  IdentityFile ${local_file.bastion_private_key.filename}
+  ProxyCommand aws ssm start-session --target %h --document-name AWS-StartSSHSession --parameters portNumber=%p
+EOT
+}
+
 output "nat_gateway_ip" {
   description = "Public IP address of the NAT Gateway"
   value       = aws_eip.nat.public_ip
