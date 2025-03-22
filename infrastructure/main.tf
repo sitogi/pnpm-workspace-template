@@ -1,5 +1,16 @@
 # Main Terraform configuration file
 
+terraform {
+  # S3バックエンドを使用する場合はコメントアウトを解除
+  # backend "s3" {
+  #   bucket = "pnpm-workspace-terraform-state"
+  #   key    = "terraform.tfstate"
+  #   region = "ap-northeast-1"
+  #   dynamodb_table = "pnpm-workspace-terraform-lock"
+  #   encrypt = true
+  # }
+}
+
 provider "aws" {
   region = var.aws_region
 }
