@@ -225,6 +225,29 @@ data "aws_ssm_parameter" "amazon_linux_2023" {
   name = "/aws/service/ami-amazon-linux-latest/al2023-ami-kernel-default-x86_64"
 }
 
+# Generate a new SSH key pair
+resource "tls_private_key" "bastion" {
+  algorithm = "RSA"
+  rsa_bits  = 4096
+}
+
+# Register the key pair with AWS
+resource "aws_key_pair" "bastion" {
+  key_name   = "${var.project_name}-bastion-key"
+  public_key = tls_private_key.bastion.public_key_openssh
+
+  tags = {
+    Name = "${var.project_name}-bastion-key"
+  }
+}
+
+# Save the private key locally
+resource "local_file" "bastion_private_key" {
+  content         = tls_private_key.bastion.private_key_pem
+  filename        = "${path.module}/${var.project_name}-bastion-key.pem"
+  file_permission = "0600"
+}
+
 # EC2 Bastion Instance
 resource "aws_instance" "bastion" {
   ami                    = var.ec2_ami != "" ? var.ec2_ami : data.aws_ssm_parameter.amazon_linux_2023.value
@@ -232,6 +255,7 @@ resource "aws_instance" "bastion" {
   subnet_id              = aws_subnet.private[0].id
   vpc_security_group_ids = [aws_security_group.bastion.id]
   iam_instance_profile   = aws_iam_instance_profile.bastion.name
+  key_name               = aws_key_pair.bastion.key_name
 
   tags = {
     Name = "${var.project_name}-bastion"
