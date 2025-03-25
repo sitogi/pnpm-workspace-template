@@ -1,4 +1,4 @@
-# S3 backend resources
+# Terraform remote state configuration
 
 # ファイルには、S3バックエンドを使用する前に作成する必要があるリソースが含まれています。
 # このファイルを最初に別途適用し、次にmain.tfのバックエンド構成のコメントを解除してください。
